@@ -1,0 +1,28 @@
+{% macro event(id='',year='', month='', text='', byline='', img_id='', active='') -%}
+
+	<div class="rest-group {{active}}" id= "{{id}}">
+	    
+	    <div class="rest-name">
+	      <div class="sticky-name">
+	        <div class="rest-yr">{{year}}</div>
+	        <div class="rest-title">{{month}}</div>
+	      </div>
+	    </div>
+  	
+	  	<div class="rest-content">
+	
+	  	{% if img_id %}
+		    <div class="rest-img">
+	    		<img src= http://ww3.hdnux.com/photos/51/51/60/{{img_id}}/5/900x900.jpg></img>
+	  		</div>
+	  		 <div class="caption"><span class="byline">{{byline}}</span></div>
+		{% else %}
+  		{% endif %}
+		   
+	      	<div class="rest-text">{{text}}</div>
+
+	    </div>
+
+  	</div>
+
+{%- endmacro %}

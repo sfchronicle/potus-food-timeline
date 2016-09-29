@@ -1,0 +1,157 @@
+{% if config.DEBUG %}
+  <script>document.write('<script src="http://'
+    + location.host.split(':')[0]
+    + ':35729/livereload.js"></'
+    + 'script>')</script>
+  <link rel="stylesheet" type="text/css" href="http://www.sfchronicle.com/external/css/global.article_global.r7.17.0.6.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="http://www.sfchronicle.com/external/css/global.article_local.r7.17.0.6.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="http://www.sfchronicle.com/external/css/global.ie8.r7.17.0.6.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="http://www.sfchronicle.com/external/css/global.article_print.r7.17.0.6.css" media="all" />
+	<script type="text/javascript" src="http://www.sfchronicle.com/js/hdn/utils/jquery-1.11.1.min.js"></script>
+
+{% endif %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+<script type="text/javascript">
+	$(window).scroll(function() {
+    
+  var window_top = document.body.scrollTop;
+  var div_top = document.getElementById('stick-here').getBoundingClientRect().top + window_top;
+  //   var timeline = document.getElementById('ticker');
+  var div_bottom = document.getElementById('37').getBoundingClientRect().bottom + window_top - 30;
+
+  for (var i = 1; i < 38; i++) {
+    var a = document.getElementById(i);
+    var at = document.getElementById(i);
+    if (i == 37) {
+      var ed_top = a.getBoundingClientRect().top + window_top - 100;
+      var ede_top = a.getBoundingClientRect().bottom + window_top - 135;
+    } else {
+      var ed_top = a.getBoundingClientRect().top + window_top - 100;
+      var ede_top = a.getBoundingClientRect().bottom + window_top - 100;
+    }
+
+    if (window_top > ed_top && window_top < ede_top) {
+      at.classList.add('active');
+      a.classList.add('active');
+    } else {
+      at.classList.remove('active');
+      a.classList.remove('active');
+    }
+  }
+});
+</script>
+
+<div id="stick-here"></div>
+
+<div class="timeline" id="timeline">
+<h2 id="timeline-title">Timeline</h2>
+
+{% import 'components/timeline.html' as time %}
+<!-- id, year, month, text, byline, img_id -->
+
+{{ time.event('1','2009', 'January', 'Long before sushi was available in just about every neighborhood, Yoshi Tome opened this Sausalito restaurant, and it remains one of the best in the Bay Area. Much of the recent boom in Japanese restaurants — especially ones with upscale omakase menus — can be traced back to him, including Kusakabe, Ju-ni and Village Sake in Fairfax.', 'Haraz N. Ghanbari, AP', '11054689' ) }}
+
+{{ time.event('2','2009', 'February', 'USDA launches the People’s Garden Initiative to establish community and school gardens across the country to sell or donate fresh produce to local institutions, restaurants and schools. Today, it has 1,500 partners and more than 2,200 productive gardens.' ) }}
+
+{{ time.event('3','2009', 'March', 'FLOTUS and a troop of fifth-graders plant the first seedlings in the White House Kitchen Garden.', 'Charles Dharapa, AP', '11054320' ) }}
+
+{{ time.event('4','2009', 'March', 'The White House installs beehives on the South Lawn.' ) }}
+
+{{ time.event('5','2009', 'May', 'Five Guys burgers receives a public-relations boost after POTUS pays a surprise visit to one of the chain’s D.C. outposts.', 'Brendand Smialowski, via Bloomberg News', '11054588' ) }}
+
+{{ time.event('6','2009', 'May', 'FLOTUS makes the first of several appearances on Sesame Street to promote healthy eating and habits for kids.', 'Richard Termine, AP', '11054748' ) }}
+
+{{ time.event('7','2009', 'June', 'FLOTUS dines at Fino Restaurant in San Francisco.' ) }}
+
+{{ time.event('8','2009', 'September', 'USDA launches Know Your Farmer, Know Your Food initiative, to assist schools participating in school nutrition programs to buy more locally grown foods.' ) }}
+
+{{ time.event('9','2009', 'November', 'The Obamas host their first state dinner at the White House for Indian Prime Minister Manmohan Singh. Guest chef Marcus Samuelsson prepares a menu that includes green curry prawns, caramelized salsify with smoked collard greens and coconut with aged basmati rice.', 'Andrew Harnik, AP', '11054769' ) }}
+
+{{ time.event('10','2010', 'January', 'FLOTUS appears on “Iron Chef.”' ) }}
+
+<div class="rest-group" id= "11">  
+  <div class="rest-name">
+    <div class="sticky-name">
+      <div class="rest-yr">2010</div>
+      <div class="rest-title">February</div>
+    </div>
+  </div>
+	<div class="rest-content">		   
+    	<div class="rest-text">FLOTUS launches Let’s Move campaign and announces the <a href="http://www.whitehouse.gov/the-press-office/remarks-first-lady-fresh-food-financing-initiative" target="_blank">Healthy Food Financing Initiative</a>, a multimillion dollar public and private investment to improve access to healthy food. POTUS issues memorandum establishing Task Force on Childhood Obesity.</div>
+  </div>
+</div>
+
+{{ time.event('12','2010', 'May', 'White House releases report by the Task Force on Childhood Obesity.' ) }}
+
+{{ time.event('13','2010', 'December', 'POTUS signs Healthy, Hunger-Free Kids Act.' ) }}
+
+{{ time.event('14','2011', 'May', 'USDA launches an online Food Desert Locator, which is an outgrowth of FLOTUS’ Let’s Move campaign.' ) }}
+
+{{time.event('15', '2011', 'January','POTUS signs into law the Food Safety Modernization Act. He also buys a home-brewing kit.' )}}
+
+<div class="rest-group" id= "16">  
+  <div class="rest-name">
+    <div class="sticky-name">
+      <div class="rest-yr">2011</div>
+      <div class="rest-title">June</div>
+    </div>
+  </div>
+	<div class="rest-content">
+    <div class="rest-img">
+  		<img src= http://ww3.hdnux.com/photos/51/51/60/11111601/5/900x900.jpg></img>
+		</div>
+		 <div class="caption"><span class="byline">USDA</span></div>		   
+    	<div class="rest-text">FLOTUS unveils new USDA <a href="http://www.fns.usda.gov/tn/myplate" target="_blank">MyPlate</a> nutrition guide, replacing the nearly 20-year-old pyramid model.</div>
+  </div>
+</div>
+
+{{ time.event('17','2012', 'February', 'POTUS gets takeout from San Francisco Chinatown restaurant Great Eastern. On the same visit to S.F., Quince chef-owner Michael Tusk cooks for POTUS at a private home in San Francisco.','Susan Walsh, AP','11054417' ) }}
+
+{{ time.event('18','2012', 'June', 'Credo chef Gustavo Romero Veytia cooks lunch for POTUS in San Francisco.' ) }}
+
+{{ time.event('19','2012', 'September', 'The State Department announces Diplomatic Culinary Partnership with James Beard Foundation.' ) }}
+
+{{ time.event('20','2012', 'October', 'Alice Waters and Tyler Florence host Chefs for Obama, a $20,000 per person fundraising dinner, featuring an array of top Bay Area culinary talent, including Sylvan Mishima Brackett, Sue Conley, Charlie Hallowell, Russell Moore, Gilbert Pilgram, Gayle Pirie and John Clark.','Larry Busacca, Getty Images For NYCWFF','11111661' ) }}
+
+{{ time.event('21','2013', 'March', 'Two years after launching the Food Desert Locator, USDA launches a new and more detailed food desert map, the Food Access Research Atlas.' ) }}
+
+{{ time.event('22','2013', 'September', 'White House launches Drink Up campaign, encouraging people to drink more water.' ) }}
+
+{{ time.event('23','2014', 'January', 'San Francisco’s Cotogna hosts dinner for FLOTUS.','David Paul Morris, Special To The Chronicle','11111673' ) }}
+
+{{ time.event('24','2014', 'February', 'FDA and FLOTUS propose new food nutrition labels.' ) }}
+
+{{time.event('25','2014','April','President dines with the Japanese Prime Minister at Sukiyabashi Jiro (Jiro Dreams of Sushi).','Carolyn Kaster, AP', '11054539')}}
+
+{{ time.event('26','2014', 'May', 'FLOTUS pens New York Times op-ed about Congress’ attempts to roll back health-focused reforms.' ) }}
+
+
+
+{{time.event('27', '2014', 'July', 'POTUS becomes the first person to successfully cut to the front of the line at Austin’s Franklin BBQ.','Jacquelyn Martin, AP', '11054295')}}
+
+
+
+{{ time.event('28','2014', 'October', 'FLOTUS dances with a turnip for a viral Vine video promoting healthy eating.' ) }}
+
+{{ time.event('29','2014', 'December', 'The American Homebrewers Association awards POTUS with a lifetime membership for being the first president to brew beer at the White House.' ) }}
+
+{{ time.event('30','2015', 'January', 'POTUS proposes Healthy Families Act to Congress, a measure that would mandate paid sick leave for millions of employees, including restaurant workers.' ) }}
+
+{{ time.event('31','2015', 'February', 'POTUS dines with Elon Musk at San Francisco restaurant Spruce.' ) }}
+
+{{ time.event('32','2015', 'September', 'POTUS awards Alice Waters a 2014 National Humanities Medal.' ) }}
+
+{{time.event('33', '2016','May', 'POTUS dines with Anthony Bourdain at Bún chả Hương Liên restaurant in Hanoi for an episode of CNN’s Parts Unknown. The episode aired Sept. 25.','Carolyn Kaster, AP','11054568') }}
+
+
+{{ time.event('34','2016', 'May', 'FLOTUS unveils nation’s first update to nutrition labels in over two decades.' ) }}
+
+{{ time.event('35','2016', 'June', 'POTUS dines at San Francisco restaurant 25 Lusk.','Laura Morton, Special To The Chronicle','11111688' ) }}
+
+{{ time.event('36','2016', 'July', 'POTUS signs the National Bioengineered Food Disclosure Standard, a.k.a the GMO labeling law.' ) }}
+
+{{ time.event('37','2016', 'September', 'Agriculture Secretary Tom Vilsack declares that he wants a White House food council established.' ) }}
+
+</div>
+
